@@ -1,3 +1,9 @@
+# Steps after cloning the repository
+#### Step-1: npm install    // to install all app dependencies
+#### Step-2: npm run dev    // for running the application.
+#### Step-3: npm run server // to start the mock JSON server.
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
