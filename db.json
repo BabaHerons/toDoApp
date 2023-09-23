@@ -3,67 +3,62 @@
     {
       "id": 1,
       "taskName": "Groccery Shopping",
-      "taskDescription": "Purchase the ration items form Smart Bazaar, Exhibition Road, Patna"
+      "taskDescription": "Purchase the ration items form Smart Bazaar, Exhibition Road, Patna",
+      "isRead": false
     },
     {
       "taskName": "Petrol Refill",
       "taskDescription": "Form colonoy more branch",
-      "id": 2
-    },
-    {
-      "taskName": "something",
-      "taskDescription": "description about it",
-      "id": 3
+      "id": 2,
+      "isRead": false
     },
     {
       "taskName": "another task",
       "taskDescription": "task description abnout it",
-      "id": 4
+      "id": 4,
+      "isRead": true
     },
     {
       "taskName": "testing name",
       "taskDescription": "testing description",
-      "id": 5
+      "id": 5,
+      "isRead": false
     },
     {
       "taskName": "another task",
       "taskDescription": "another task description",
-      "id": 6
-    },
-    {
-      "taskName": "hello",
-      "taskDescription": "world",
-      "id": 7
+      "id": 6,
+      "isRead": false
     },
     {
       "taskName": "there",
       "taskDescription": "yout go with another task",
-      "id": 8
+      "id": 8,
+      "isRead": true
     },
     {
       "taskName": "task one",
       "taskDescription": "task one description",
-      "id": 9
+      "id": 9,
+      "isRead": false
     },
     {
       "taskName": "task two",
       "taskDescription": "task two description",
-      "id": 10
-    },
-    {
-      "taskName": "task two",
-      "taskDescription": "task two description",
-      "id": 11
-    },
-    {
-      "taskName": "task two",
-      "taskDescription": "task two description",
-      "id": 12
+      "id": 10,
+      "isRead": true
     },
     {
       "taskName": "Hello World",
       "taskDescription": "This is the first thing that people used to print in the console window when they starts coding. Thanks",
-      "id": 13
+      "id": 13,
+      "isRead": true
+    },
+    {
+      "taskName": "another name",
+      "taskDescription": "Anothe description",
+      "id": 14,
+      "isRead": true
     }
   ]
 }

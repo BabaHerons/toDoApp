@@ -38,6 +38,7 @@ export default function Main() {
 
   // TAKING THE VALUES FROM THE USER THROUGH THE FORM
   const submitForm = (): void => {
+    console.log(taskForm)
     if (taskForm.taskName == "") {
       alert("Please enter Task Name");
     } else if (taskForm.taskDescription == "") {
@@ -58,6 +59,27 @@ export default function Main() {
     }
   };
 
+  const handleDelete = (id:number):void => {
+    if (confirm("Do you wanna delete this task ?")){
+      fetch(`http://localhost:3000/tasks/${id}`, {
+          method: "DELETE"
+        }).then(() => {
+          fetchData();
+        });
+    }
+  }
+  const handleRead = (task:TaskModel):void => {
+    fetch(`http://localhost:3000/tasks/${task.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({...task, isRead: !task.isRead}),
+      }).then(() => {
+        fetchData();
+      });
+  }
+
   return (
     <>
       <div className="flex flex-col justify-center items-center">
@@ -76,28 +98,15 @@ export default function Main() {
             placeholder="Enter the task description"
             changeHandler={handleChange}
           />
-          <Button name="Submit" type="button" onClick={submitForm} />
+          <Button name="Submit" type="button" onClick={() => submitForm()} />
         </form>
-        <div className="grid grid-cols-3 gap-1">
+        <div className="grid grid-cols-3 gap-1 px-2">
           {tasks.map((task: TaskModel) => {
             return (
               <>
-                <Task
-                  key={task.id}
-                  taskName={task.taskName}
-                  taskDescription={task.taskDescription}
-                />
+                <Task task={task} onDelete={() => handleDelete(task.id!)} onToggle={() => handleRead(task)} />
               </>
             );
-            // if (task != null) {
-            //   return (
-            //     <Task
-            //       key={task.id}
-            //       name={task.taskName}
-            //       description={task.taskDescription}
-            //     />
-            //   );
-            // }
           })}
         </div>
       </div>
